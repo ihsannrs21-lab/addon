@@ -37,18 +37,16 @@ if not exist "gradle-8.4" (
 
 echo Extraction completed successfully!
 echo.
-echo Step 3: Copying gradle-wrapper.jar...
+echo Step 3: Copying gradle-wrapper-8.4.jar...
 
-REM Check if gradle-wrapper.jar exists
-if exist "gradle-8.4\lib\plugins\gradle-wrapper.jar" (
-    echo Found gradle-wrapper.jar!
+REM Check if gradle-wrapper-8.4.jar exists
+if exist "gradle-8.4\lib\plugins\gradle-wrapper-8.4.jar" (
+    echo Found gradle-wrapper-8.4.jar!
     if not exist "..\gradle\wrapper" mkdir ..\gradle\wrapper
-    copy "gradle-8.4\lib\plugins\gradle-wrapper.jar" "..\gradle\wrapper\gradle-wrapper.jar"
+    copy "gradle-8.4\lib\plugins\gradle-wrapper-8.4.jar" "..\gradle\wrapper\gradle-wrapper.jar"
     echo Copied successfully!
 ) else (
-    echo ERROR: gradle-wrapper.jar not found in extraction!
-    echo Checking directory structure...
-    dir "gradle-8.4\lib\plugins" 2>nul || echo Directory listing failed
+    echo ERROR: gradle-wrapper-8.4.jar not found in extraction!
     cd ..
     pause
     exit /b 1
